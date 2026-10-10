@@ -1,0 +1,6 @@
+{
+  "name": "Bilim Markazi",
+  "description": "eMaktab uslubidagi zamonaviy maktab boshqaruv va ta'lim tizimi",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
