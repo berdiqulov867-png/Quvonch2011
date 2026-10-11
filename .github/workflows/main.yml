@@ -19,13 +19,12 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      # Gradle'ni serverga o'rnatamiz
+      # Gradle versiyasini talab qilinganidek 9.3.1 ga ko'taramiz
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
         with:
-          gradle-version: '8.5'
+          gradle-version: '9.3.1'
 
-      # Gradle yordamida to'g'ridan-to'g'ri build qilamiz
       - name: Build APK
         run: gradle :app:assembleDebug --no-daemon
 
