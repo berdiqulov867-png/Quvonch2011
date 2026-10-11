@@ -19,14 +19,15 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      # Gradle versiyasini 8.5 qilib belgilaymiz (KSP mosligi uchun)
+      # Gradle'ni serverga o'rnatamiz
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
         with:
           gradle-version: '8.5'
 
+      # Gradle yordamida to'g'ridan-to'g'ri build qilamiz
       - name: Build APK
-        run: gradle assembleDebug --no-daemon
+        run: gradle :app:assembleDebug --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
