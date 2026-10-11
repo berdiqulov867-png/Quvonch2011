@@ -19,14 +19,14 @@ jobs:
           distribution: temurin
           java-version: '17'
 
-      # Gradle versiyasini talab qilinganidek 9.3.1 ga ko'taramiz
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
         with:
           gradle-version: '9.3.1'
 
+      # Maxsus signing config'ni chetlab o'tib, oddiy debug APK yig'amiz
       - name: Build APK
-        run: gradle :app:assembleDebug --no-daemon
+        run: gradle assembleDebug --no-daemon
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
