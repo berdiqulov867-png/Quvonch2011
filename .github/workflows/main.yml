@@ -19,12 +19,10 @@ uses: actions/checkout@v4
       distribution: temurin
       java-version: '17'
 
-  - name: Grant permission
-    run: chmod +x gradlew || true
-
   - name: Build APK
     run: |
       if [ -f gradlew ]; then
+        chmod +x gradlew
         ./gradlew assembleDebug
       else
         echo "gradlew fayli topilmadi"
